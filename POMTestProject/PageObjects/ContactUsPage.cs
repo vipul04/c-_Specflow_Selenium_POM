@@ -4,10 +4,6 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using POMTestProject.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -24,16 +20,16 @@ namespace POMTestProject.PageObjects
 
         WebDriverWait wait = new WebDriverWait(Browser.Current, TimeSpan.FromSeconds(20));
 
-        [FindsBy(How = How.CssSelector, Using = ".wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required")]
+        [FindsBy(How = How.Name, Using = "your-name")]
         IWebElement Name;
 
-        [FindsBy(How = How.CssSelector, Using = ".wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email")]
+        [FindsBy(How = How.Name, Using = "your-email")]
         IWebElement Email;
 
-        [FindsBy(How = How.CssSelector, Using = ".wpcf7-form-control.wpcf7-text")]
+        [FindsBy(How = How.Name, Using = "your-company")]
         IWebElement Subject;
 
-        [FindsBy(How = How.CssSelector, Using = ".wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required")]
+        [FindsBy(How = How.Name, Using = "your-message")]
         IWebElement Message;
 
         [FindsBy(How = How.Id, Using = "contact-us-send")]
@@ -60,7 +56,7 @@ namespace POMTestProject.PageObjects
 
         public bool CheckConfirmationMessage(string expectedConfirmationMessage)
         {
-            IWebElement ConfirmationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-response-output.wpcf7-display-none.fusion-alert.wpcf7-mail-sent-ok"));
+            IWebElement ConfirmationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-mail-sent-ok"));
             string actualConfirmationMessage = ConfirmationMessage.Text;
             return actualConfirmationMessage.Equals(expectedConfirmationMessage);
         }

@@ -10,7 +10,7 @@ Scenario Outline: Valid Submission
 	And enter the following information
 	| Name   | Email   | Subject   | Message   |
 	| <Name> | <Email> | <Subject> | <Message> |
-    Then I should see the "×|\r|\nTHANK YOU FOR YOUR MESSAGE." 
+    Then I should see the "×\r\nTHANK YOU FOR YOUR MESSAGE." 
 
 	Examples: 
 	| Name     | Email                | Subject         | Message                                   |

@@ -121,7 +121,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("enter the following information", ((string)(null)), table1, "And ");
 #line 13
-    testRunner.Then("I should see the \"×|\\r|\\nTHANK YOU FOR YOUR MESSAGE.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("I should see the \"×\\r\\nTHANK YOU FOR YOUR MESSAGE.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
