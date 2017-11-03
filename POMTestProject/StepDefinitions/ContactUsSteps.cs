@@ -1,15 +1,8 @@
 ﻿using Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings;
 using OpenQA.Selenium;
 using POMTestProject.PageObjects;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
-using Baseclass.Contrib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace POMTestProject.StepDefinitions

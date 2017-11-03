@@ -1,11 +1,6 @@
 ﻿using Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings;
 using OpenQA.Selenium;
 using POMTestProject.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace POMTestProject.StepDefinitions
