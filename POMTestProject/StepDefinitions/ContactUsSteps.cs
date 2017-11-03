@@ -17,8 +17,8 @@ namespace POMTestProject.StepDefinitions
         public void GivenIAmOnTheQAWorksSite()
         {
             Browser.Current.Navigate().GoToUrl(ConfigurationManager.AppSettings["seleniumBaseUrl"]);
+            Browser.Current.Manage().Window.Maximize();
             currentDriver = Browser.Current;
-            currentDriver.Manage().Window.Maximize();
         }
 
         [When(@"enter the following information")]
