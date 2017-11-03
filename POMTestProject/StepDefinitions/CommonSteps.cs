@@ -19,8 +19,8 @@ namespace POMTestProject.StepDefinitions
         public void WhenINavigateToTheContactUsPage()
         {
             currentDriver = Browser.Current;
-            Homepage homePage = new Homepage();
-            homePage.GoToContactUsPage();
+            Pages.Homepage.GoToContactUsPage();
+            Pages.ContactUsPage.IsAt();
         }
 
 

@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 
 namespace POMTestProject.PageObjects
 {
-    public class Homepage
+    public class Homepage : BasePage
     {
-        public Homepage()
+        #region Properties
+
+        protected override string PageTitle
         {
-            PageFactory.InitElements(Browser.Current, this);
+            get { return "QAWorks Limited - Software Quality & Delivery Experts"; }
         }
+
+        #endregion
 
         #region Elements
 

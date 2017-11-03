@@ -9,12 +9,17 @@ using TechTalk.SpecFlow.Assist;
 
 namespace POMTestProject.PageObjects
 {
-    public class ContactUsPage
+    public class ContactUsPage : BasePage
     {
-        public ContactUsPage()
+
+        #region Properties
+
+        protected override string PageTitle
         {
-            PageFactory.InitElements(Browser.Current, this);
+            get { return "CONTACT US | QAWorks Limited"; }
         }
+
+        #endregion
 
         #region Elements
 
@@ -35,9 +40,6 @@ namespace POMTestProject.PageObjects
         [FindsBy(How = How.Id, Using = "contact-us-send")]
         IWebElement SendBtn;
 
-        //[FindsBy(How = How.CssSelector, Using = ".wpcf7-response-output.wpcf7-display-none.fusion-alert.wpcf7-mail-sent-ok")]
-        //IWebElement ConfirmationMessage;
-
         #endregion
 
         #region Public Methods
@@ -50,14 +52,13 @@ namespace POMTestProject.PageObjects
             Subject.SendKeys(contactUsForm.Subject);
             Message.SendKeys(contactUsForm.Message);
             SendBtn.Click();
-            By locator = By.CssSelector(".wpcf7-response-output.wpcf7-display-none.fusion-alert.wpcf7-mail-sent-ok");
-            wait.Until(ExpectedConditions.ElementIsVisible(locator));
+            WaitForElement(By.CssSelector(".wpcf7-response-output.wpcf7-display-none.fusion-alert.wpcf7-mail-sent-ok"));
         }
 
         public bool CheckConfirmationMessage(string expectedConfirmationMessage)
         {
-            IWebElement ConfirmationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-mail-sent-ok"));
-            string actualConfirmationMessage = ConfirmationMessage.Text;
+            IWebElement confirmationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-mail-sent-ok"));
+            string actualConfirmationMessage = confirmationMessage.Text;
             return actualConfirmationMessage.Equals(expectedConfirmationMessage);
         }
 

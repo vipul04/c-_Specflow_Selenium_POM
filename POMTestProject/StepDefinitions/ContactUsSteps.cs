@@ -20,25 +20,24 @@ namespace POMTestProject.StepDefinitions
 
         IWebDriver currentDriver = null;
 
-        ContactUsPage contactUsPage = new ContactUsPage();
-
         [Given(@"I am on the QAWorks Site")]
         public void GivenIAmOnTheQAWorksSite()
         {
             Browser.Current.Navigate().GoToUrl(ConfigurationManager.AppSettings["seleniumBaseUrl"]);
             currentDriver = Browser.Current;
+            currentDriver.Manage().Window.Maximize();
         }
 
         [When(@"enter the following information")]
         public void WhenEnterTheFollowingInformation(Table table)
         {
-            contactUsPage.CompleteContactUsForm(table);
+            Pages.ContactUsPage.CompleteContactUsForm(table);
         }
 
         [Then(@"I should see the ""(.*)""")]
         public void ThenIShouldSeeThe(string expectedConfirmationMessage)
         {
-            Assert.IsTrue(contactUsPage.CheckConfirmationMessage(expectedConfirmationMessage));
+            Assert.IsTrue(Pages.ContactUsPage.CheckConfirmationMessage(expectedConfirmationMessage));
         }
     }
 }
