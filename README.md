@@ -1,4 +1,4 @@
-# Selenium Automation using C#
+# Selenium Automation using C# - POM
 
 Steps: 
 - Install Visual Studio
