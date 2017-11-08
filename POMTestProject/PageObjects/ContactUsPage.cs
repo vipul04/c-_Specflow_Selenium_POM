@@ -52,14 +52,14 @@ namespace POMTestProject.PageObjects
             Subject.SendKeys(contactUsForm.Subject);
             Message.SendKeys(contactUsForm.Message);
             SendBtn.Click();
-            WaitForElement(By.CssSelector(".wpcf7-response-output.wpcf7-display-none.fusion-alert.wpcf7-mail-sent-ok"));
+            WaitForElement(By.CssSelector(".wpcf7-response-output"));
         }
 
-        public bool CheckConfirmationMessage(string expectedConfirmationMessage)
+        public bool CheckValidationMessage(string expectedValidationMessage)
         {
-            IWebElement confirmationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-mail-sent-ok"));
-            string actualConfirmationMessage = confirmationMessage.Text;
-            return actualConfirmationMessage.Equals(expectedConfirmationMessage);
+            IWebElement validationMessage = Browser.Current.FindElement(By.CssSelector(".wpcf7-response-output"));
+            string actualValidationMessage = validationMessage.Text;
+            return actualValidationMessage.Contains(expectedValidationMessage);
         }
 
         #endregion

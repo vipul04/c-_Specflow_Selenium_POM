@@ -27,10 +27,10 @@ namespace POMTestProject.StepDefinitions
             Pages.ContactUsPage.CompleteContactUsForm(table);
         }
 
-        [Then(@"I should see the ""(.*)""")]
-        public void ThenIShouldSeeThe(string expectedConfirmationMessage)
+        [Then(@"I should see the message ""(.*)""")]
+        public void ThenIShouldSeeTheMessage(string expectedValidationMessage)
         {
-            Assert.IsTrue(Pages.ContactUsPage.CheckConfirmationMessage(expectedConfirmationMessage));
+            Assert.IsTrue(Pages.ContactUsPage.CheckValidationMessage(expectedValidationMessage));
         }
     }
 }

@@ -121,7 +121,52 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("enter the following information", ((string)(null)), table1, "And ");
 #line 13
-    testRunner.Then("I should see the \"×\\r\\nTHANK YOU FOR YOUR MESSAGE.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("I should see the message \"THANK YOU FOR YOUR MESSAGE.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Invalid Submission")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "", "j.Bloggs@qaworks.com", "test automation", "please contact me I want to find out more", null, Category="Chrome", TestName="InvalidSubmission on Chrome with: \"\" ,\"j.Bloggs@qaworks.com\" ,\"test automation\" ," +
+            "\"please contact me I want to find out more\"")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "j.Bloggs", "", "test automation", "please contact me I want to find out more", null, Category="Chrome", TestName="InvalidSubmission on Chrome with: \"j.Bloggs\" ,\"\" ,\"test automation\" ,\"please cont" +
+            "act me I want to find out more\"")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "j.Bloggs", "j.Bloggsqaworks.com", "test automation", "please contact me I want to find out more", null, Category="Chrome", TestName="InvalidSubmission on Chrome with: \"j.Bloggs\" ,\"j.Bloggsqaworks.com\" ,\"test automa" +
+            "tion\" ,\"please contact me I want to find out more\"")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "j.Bloggs", "j.Bloggs@qaworks.com", "test automation", "", null, Category="Chrome", TestName="InvalidSubmission on Chrome with: \"j.Bloggs\" ,\"j.Bloggs@qaworks.com\" ,\"test autom" +
+            "ation\" ,\"\"")]
+        public virtual void InvalidSubmission(string browser, string name, string email, string subject, string message, string[] exampleTags)
+        {
+            InitializeSelenium(browser);
+            string[] @__tags = new string[] {
+                    "Browser:Chrome"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid Submission", @__tags);
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+ testRunner.Given("I am on the QAWorks Site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+ testRunner.When("I navigate to the Contact Us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Email",
+                        "Subject",
+                        "Message"});
+            table2.AddRow(new string[] {
+                        string.Format("{0}", name),
+                        string.Format("{0}", email),
+                        string.Format("{0}", subject),
+                        string.Format("{0}", message)});
+#line 24
+ testRunner.And("enter the following information", ((string)(null)), table2, "And ");
+#line 27
+ testRunner.Then("I should see the message \"PLEASE RE-SUBMIT WITH CORRECT INFORMATION\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

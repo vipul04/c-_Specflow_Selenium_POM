@@ -10,8 +10,25 @@ Scenario Outline: Valid Submission
 	And enter the following information
 	| Name   | Email   | Subject   | Message   |
 	| <Name> | <Email> | <Subject> | <Message> |
-    Then I should see the "×\r\nTHANK YOU FOR YOUR MESSAGE." 
+    Then I should see the message "THANK YOU FOR YOUR MESSAGE." 
 
 	Examples: 
 	| Name     | Email                | Subject         | Message                                   |
 	| j.Bloggs | j.Bloggs@qaworks.com | test automation | please contact me I want to find out more |
+
+	 
+@Browser:Chrome
+Scenario Outline: Invalid Submission
+	Given I am on the QAWorks Site
+	When I navigate to the Contact Us page
+	And enter the following information
+	| Name   | Email   | Subject   | Message   |
+	| <Name> | <Email> | <Subject> | <Message> |
+	Then I should see the message "PLEASE RE-SUBMIT WITH CORRECT INFORMATION"
+
+	Examples: 
+	| Name     | Email                | Subject         | Message                                   |
+	|          | j.Bloggs@qaworks.com | test automation | please contact me I want to find out more |
+	| j.Bloggs |                      | test automation | please contact me I want to find out more |
+	| j.Bloggs | j.Bloggsqaworks.com  | test automation | please contact me I want to find out more |
+	| j.Bloggs | j.Bloggs@qaworks.com | test automation |                                           |
