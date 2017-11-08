@@ -5,6 +5,7 @@ Steps:
 - Under Tools/Extenstion and Updates Install
 - Baseclass.Contrib.SpecFlow.Selenium.NUnit
 - NUnit 3.0
+- NUnit3TestAdapter
 - Specflow 
 - Specflow.Assist.Dynamic
 - Selenium.Support
