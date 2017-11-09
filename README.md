@@ -12,3 +12,8 @@ Steps:
 - Selenium.WebDriver
 - Selenium.WebDriver.ChromeDriver
 - Clean and Build the solution
+
+Improvements:
+
+- Put all WebDriver setup/configuration code in separate class
+- use packages for Page Objects, Features, Step Definitions rather than directories
