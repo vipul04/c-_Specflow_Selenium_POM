@@ -6,6 +6,8 @@ Steps:
 - Baseclass.Contrib.SpecFlow.Selenium.NUnit
 - NUnit 3.0
 - NUnit3TestAdapter
+- NUnit.ConsoleRunner
+- Pickles.CommandLine
 - Specflow 
 - Specflow.Assist.Dynamic
 - Selenium.Support
